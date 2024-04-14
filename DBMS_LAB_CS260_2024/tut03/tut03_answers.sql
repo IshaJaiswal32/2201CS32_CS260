@@ -3,6 +3,7 @@
 -- Comment in MYSQL 
 --Table creation and inserting values
 --Server 8.0.36
+--Kindly Remove comments if the file doesn't work
 CREATE TABLE `students` (
   `student_id` BIGINT,
   `first_name` VARCHAR(1024),
