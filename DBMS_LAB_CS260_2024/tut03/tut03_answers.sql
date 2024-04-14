@@ -2,6 +2,7 @@
 -- 1.	The .sql files are run automatically, so please ensure that there are no syntax errors in the file. If we are unable to run your file, you get an automatic reduction to 0 marks.
 -- Comment in MYSQL 
 --Table creation and inserting values
+--Server 8.0.36
 CREATE TABLE `students` (
   `student_id` BIGINT,
   `first_name` VARCHAR(1024),
