@@ -6,8 +6,8 @@ CREATE TABLE departments (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(50) NOT NULL,
     location VARCHAR(50),
-    manager_id INT,
-    FOREIGN KEY (manager_id) REFERENCES employees(emp_id)
+    manager_id INT
+   
 );
 
 -- Create the employees table
@@ -48,6 +48,7 @@ INSERT INTO projects (project_id, project_name, budget, start_date, end_date) VA
 
 
 --Procedure 1
+DELIMITER //
 CREATE PROCEDURE CalculateAverageSalary(departmentID INT)
 BEGIN
     DECLARE avgSalary DECIMAL(10,2);
@@ -57,26 +58,32 @@ BEGIN
     WHERE department_id = departmentID;
     
     SELECT avgSalary AS AverageSalary;
-END;
+END//
+DELIMITER ;
 
 --Procedure 2
+DELIMITER //
 CREATE PROCEDURE UpdateEmployeeSalary(empID INT, percentageIncrease DECIMAL(5,2))
 BEGIN
     UPDATE employees
     SET salary = salary * (1 + percentageIncrease / 100)
     WHERE emp_id = empID;
-END;
+END//
+DELIMITER ;
 
 --Procedure 3
+DELIMITER //
 CREATE PROCEDURE ListEmployeesInDepartment(departmentID INT)
 BEGIN
     SELECT emp_id, first_name, last_name, salary
     FROM employees
     WHERE department_id = departmentID;
-END;
+END//
+DELIMITER ;
 
 
 --Procedure 4
+DELIMITER //
 CREATE PROCEDURE CalculateTotalProjectBudget(projectID INT)
 BEGIN
     DECLARE totalBudget DECIMAL(10,2);
@@ -86,9 +93,11 @@ BEGIN
     WHERE project_id = projectID;
     
     SELECT totalBudget AS TotalBudget;
-END;
+END//
+DELIMITER;
 
 --Procedure 5
+DELIMITER //
 CREATE PROCEDURE FindHighestSalaryEmployee(departmentID INT)
 BEGIN
     DECLARE highestSalary DECIMAL(10,2);
@@ -101,9 +110,11 @@ BEGIN
     SELECT emp_id, first_name, last_name, salary
     FROM employees
     WHERE emp_id = employeeID;
-END;
+END//
+DELIMITER;
 
 --Procedure 6
+DELIMITER //
 CREATE PROCEDURE ListProjectsDueInDays(days INT)
 BEGIN
     DECLARE currentDate DATE;
@@ -112,9 +123,11 @@ BEGIN
     SELECT project_id, project_name, end_date
     FROM projects
     WHERE end_date <= DATE_ADD(currentDate, INTERVAL days DAY);
-END;
+END//
+DELIMITER;
 
 --Procedure 7
+DELIMITER //
 CREATE PROCEDURE CalculateTotalSalaryExpenditure(departmentID INT)
 BEGIN
     DECLARE totalExpenditure DECIMAL(10,2);
@@ -124,26 +137,32 @@ BEGIN
     WHERE department_id = departmentID;
     
     SELECT totalExpenditure AS TotalSalaryExpenditure;
-END;
+END//
+DELIMITER;
 
 --Procedure 8
+DELIMITER //
 CREATE PROCEDURE GenerateEmployeeReport()
 BEGIN
     SELECT e.emp_id, e.first_name, e.last_name, e.salary, d.department_name, d.location
     FROM employees e
     JOIN departments d ON e.department_id = d.department_id;
-END;
+END//
+DELIMITER;
 
 --Procedure 9
+DELIMITER //
 CREATE PROCEDURE FindProjectWithHighestBudget()
 BEGIN
     SELECT project_id, project_name, budget
     FROM projects
     ORDER BY budget DESC
     LIMIT 1;
-END;
+END//
+DELIMITER;
 
 --Procedure 10
+DELIMITER //
 CREATE PROCEDURE CalculateAverageSalaryAcrossDepartments()
 BEGIN
     DECLARE avgSalary DECIMAL(10,2);
@@ -152,17 +171,21 @@ BEGIN
     FROM employees;
     
     SELECT avgSalary AS AverageSalary;
-END;
+END//
+DELIMITER;
 
 --Procedure 11
+DELIMITER //
 CREATE PROCEDURE AssignNewManager(departmentID INT, newManagerID INT)
 BEGIN
     UPDATE departments
     SET manager_id = newManagerID
     WHERE department_id = departmentID;
-END;
+END//
+DELIMITER;
 
 --Procedure 12
+DELIMITER //
 CREATE PROCEDURE CalculateRemainingBudget(projectID INT, actualSpent DECIMAL(10,2))
 BEGIN
     DECLARE projectBudget DECIMAL(10,2);
@@ -172,18 +195,22 @@ BEGIN
     WHERE project_id = projectID;
     
     SELECT projectBudget - actualSpent AS RemainingBudget;
-END;
+END//
+DELIMITER;
 
 --Procedure 13
+DELIMITER //
 CREATE PROCEDURE GenerateEmployeesJoinedInYear(joinYear INT)
 BEGIN
     SELECT emp_id, first_name, last_name, department_id, salary
     FROM employees
     WHERE YEAR(start_date) = joinYear;
-END;
+END//
+DELIMITER;
 
 
 --Procedure 14
+DELIMITER //
 CREATE PROCEDURE UpdateProjectEndDate(projectID INT, durationInDays INT)
 BEGIN
     DECLARE startDate DATE;
@@ -195,13 +222,16 @@ BEGIN
     UPDATE projects
     SET end_date = DATE_ADD(startDate, INTERVAL durationInDays DAY)
     WHERE project_id = projectID;
-END;
+END//
+DELIMITER;
 
 --Procedure 15
+DELIMITER //
 CREATE PROCEDURE CalculateTotalEmployeesInEachDepartment()
 BEGIN
     SELECT d.department_id, d.department_name, COUNT(e.emp_id) AS TotalEmployees
     FROM departments d
     LEFT JOIN employees e ON d.department_id = e.department_id
     GROUP BY d.department_id, d.department_name;
-END;
+END//
+DELIMITER;
