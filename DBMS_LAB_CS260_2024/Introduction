@@ -1,0 +1,44 @@
+Faculty Recruitment Portal
+
+Welcome to the Faculty Recruitment Portal project, a comprehensive solution designed to streamline the faculty hiring process. In this project,we have 
+meticulously crafted a series of PHP-based pages and a robust backend to facilitate seamless interaction between users and the database. 
+By following the steps outlined in this guide, users can navigate through various pages, inputting essential data and uploading necessary files at each stage.
+Our portal offers a holistic approach to managing faculty recruitment processes with functionalities ranging from database connectivity to PDF generation and
+file management. Whether it's registering as a new user, logging in, or securely storing and retrieving data, this project ensures efficiency and accuracy
+at every step. Join us as we embark on a journey to revolutionize faculty recruitment through innovative technology and meticulous attention to detail.
+
+
+
+1.	Folder Structure:
+•	Create a folder to contain all PHP files related to the project.
+•	Ensure that this folder is accessible and organized for easy navigation.
+2.	Database Connection:
+•	Connect the PHP files to the database (presumably MySQL) as demonstrated in the provided video tutorial.
+•	Generate the required tables in phpMyAdmin according to the code's specifications.
+3.	External Dependencies:
+•	Download and include the necessary external libraries: fpdf for generating PDFs and phpmailer for sending emails.
+•	Make sure these libraries are properly configured and integrated into your project.
+4.	File Storage:
+•	Create an uploads folder where all images and inserted PDF files will be stored.
+•	Ensure that the folder has appropriate permissions for file read/write operations.
+•	Additionally, create a pdf_output folder to store generated PDF files.
+5.	User Interaction:
+•	Navigate to the signup page and complete the registration process by providing the required information.
+•	Log in to the portal using the registered credentials.
+•	Insert data and upload files as prompted on various pages of the portal.
+6.	Data Saving:
+•	Implement functionality to save the entered data and uploaded files to the database.
+•	Upon clicking the "Save" button on each page, ensure that the data is successfully stored in the database.
+7.	Page Navigation:
+•	Enable navigation between pages using a "Next" button after saving data on each page.
+•	Ensure a smooth transition between pages without loss of entered information.
+8.	Data Verification:
+•	After completing all pages, verify that all data is accurately stored in the database.
+•	Check the server to confirm the presence of the stored data and file names.
+9.	File Management:
+•	Access the uploads folder to view uploaded images and files.
+•	Verify that all uploaded content is correctly stored in this folder.
+10.	PDF Generation:
+•	Check the pdf_output folder to locate PDF files containing the combined data from the portal.
+•	Ensure that the generated PDFs accurately represent the entered information.
+
