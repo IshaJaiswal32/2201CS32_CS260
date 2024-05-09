@@ -1,6 +1,12 @@
 Faculty Recruitment Portal
 
-Welcome to the Faculty Recruitment Portal project, a comprehensive solution designed to streamline the faculty hiring process. In this project, we have meticulously crafted a series of PHP-based pages coupled with a robust backend to facilitate seamless interaction between users and the database. By following the steps outlined in this guide, users can navigate through various pages, inputting essential data and uploading necessary files at each stage. With functionalities ranging from database connectivity to PDF generation and file management, our portal offers a holistic approach to managing faculty recruitment processes. Whether it's registering as a new user, logging in, or securely storing and retrieving data, this project ensures efficiency and accuracy at every step. Join us as we embark on a journey to revolutionize faculty recruitment through innovative technology and meticulous attention to detail.
+Welcome to the Faculty Recruitment Portal project, a comprehensive solution designed to streamline the faculty hiring process. In this project, we have
+meticulously crafted a series of PHP-based pages and a robust backend to facilitate seamless interaction between users and the database.
+By following the steps outlined in this guide, users can navigate through various pages, inputting essential data and uploading necessary files at each
+stage. Our portal offers a holistic approach to managing faculty recruitment processes with functionalities ranging from database connectivity to PDF generation
+and file management. Whether it's registering as a new user, logging in, or securely storing and retrieving data, this project ensures efficiency 
+and accuracy at every step. Join us as we embark on a journey to revolutionize faculty recruitment through innovative technology and meticulous attention to
+detail.
 
 
 
